@@ -16,4 +16,14 @@ struct Movie: Codable {
     let trackName: String
     let artistName: String
     let kind: String
+    let imageURL: URL
+    let contentAdvisoryRating: String
+    
+    enum CodingKeys: String, CodingKey {
+        case trackName
+        case artistName
+        case kind
+        case imageURL = "artworkUrl100"
+        case contentAdvisoryRating
+    }
 }
