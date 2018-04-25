@@ -22,7 +22,7 @@ class MovieAPI {
     private init() {}
     static let manager = MovieAPI()
     func searchMovies(keyword: String, completionHandler: @escaping (Error?, Data?) -> Void) {
-        let urlString = "https://itunes.apple.com/search?media=movie&term=comedy&limit=10"
+        let urlString = "https://itunes.apple.com/search?media=movie&term=\(keyword)&limit=100"
         guard let url = URL(string: urlString) else {
             completionHandler(AppError.badURL(url: urlString), nil)
             return
