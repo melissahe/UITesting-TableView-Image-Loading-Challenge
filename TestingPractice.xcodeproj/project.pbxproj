@@ -16,6 +16,9 @@
 		81B34EA0208F794300691081 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B34E9F208F794300691081 /* Movie.swift */; };
 		81B34EB2208F7A5000691081 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B34EB1208F7A5000691081 /* NetworkHelper.swift */; };
 		81B34EBC208F7FEB00691081 /* MovieAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B34EBB208F7FEB00691081 /* MovieAPITests.swift */; };
+		81D78FC32090ED5700CCDA83 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D78FC22090ED5700CCDA83 /* MovieCell.swift */; };
+		81D78FC52090F74D00CCDA83 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D78FC42090F74D00CCDA83 /* ImageCache.swift */; };
+		81D78FC72090F90700CCDA83 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D78FC62090F90700CCDA83 /* ImageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,9 @@
 		81B34EB9208F7FEB00691081 /* MovieAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B34EBB208F7FEB00691081 /* MovieAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPITests.swift; sourceTree = "<group>"; };
 		81B34EBD208F7FEB00691081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81D78FC22090ED5700CCDA83 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		81D78FC42090F74D00CCDA83 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		81D78FC62090F90700CCDA83 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +91,12 @@
 			children = (
 				81B34E8B208F791900691081 /* AppDelegate.swift */,
 				81B34EB1208F7A5000691081 /* NetworkHelper.swift */,
+				81D78FC42090F74D00CCDA83 /* ImageCache.swift */,
+				81D78FC62090F90700CCDA83 /* ImageService.swift */,
 				81B34E9D208F793300691081 /* MovieAPI.swift */,
 				81B34E9F208F794300691081 /* Movie.swift */,
 				81B34E8D208F791900691081 /* ViewController.swift */,
+				81D78FC22090ED5700CCDA83 /* MovieCell.swift */,
 				81B34E8F208F791900691081 /* Main.storyboard */,
 				81B34E92208F791D00691081 /* Assets.xcassets */,
 				81B34E94208F791D00691081 /* LaunchScreen.storyboard */,
@@ -207,9 +216,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				81B34E9E208F793300691081 /* MovieAPI.swift in Sources */,
+				81D78FC72090F90700CCDA83 /* ImageService.swift in Sources */,
 				81B34E8E208F791900691081 /* ViewController.swift in Sources */,
+				81D78FC32090ED5700CCDA83 /* MovieCell.swift in Sources */,
 				81B34EB2208F7A5000691081 /* NetworkHelper.swift in Sources */,
 				81B34EA0208F794300691081 /* Movie.swift in Sources */,
+				81D78FC52090F74D00CCDA83 /* ImageCache.swift in Sources */,
 				81B34E8C208F791900691081 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
