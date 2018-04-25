@@ -69,6 +69,48 @@ class MovieAPITests: XCTestCase {
         wait(for: [movieResultsExpectation], timeout: 10)
     }
     
+    //test if movie url exists or not
+    func testURLIsNotNil() {
+        let movieURLExpectation = XCTestExpectation(description: "movie URL exists")
+        MovieAPI.manager.searchMovies(keyword: "comedy") { (error, data) in
+            if let error = error {
+                XCTFail("Could not get data with error: \(error)")
+            } else if let data = data {
+                do {
+                    //should fail if url is nil
+                    let _ = try JSONDecoder().decode(ResultsWrapper.self, from: data)
+                    movieURLExpectation.fulfill()
+                } catch {
+                    XCTFail("Could not parse data with error: \(error)")
+                }
+            }
+        }
+        wait(for: [movieURLExpectation], timeout: 10)
+    }
+    
+    //Tests for movies with an "unrated" rating
+    func testUnratedMovies() {
+        let movieExpectation = XCTestExpectation(description: "unrated movies exist")
+        
+        MovieAPI.manager.searchMovies(keyword: "comedy") { (error, data) in
+            if let error = error {
+                XCTFail("Could not get data with error: \(error)")
+            } else if let data = data {
+                do {
+                    let movieSearch = try JSONDecoder().decode(ResultsWrapper.self, from: data)
+                    movieExpectation.fulfill()
+                    let unratedMovies = movieSearch.results.filter{
+                        $0.contentAdvisoryRating == "Unrated"
+                    }
+                    XCTAssertEqual(unratedMovies.count, 41, "Number of results for unrated comedy movies should be 41.")
+                } catch {
+                    XCTFail("Could not parse data with error: \(error)")
+                }
+            }
+        }
+        wait(for: [movieExpectation], timeout: 10)
+    }
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
